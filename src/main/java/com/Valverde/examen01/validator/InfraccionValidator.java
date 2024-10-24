@@ -23,6 +23,9 @@ public class InfraccionValidator {
             throw new ValidateException("El DNI debe tener como maximo 8 caracteres.");
             
         }
+        if (infraccion.getFecha() == null) {
+            throw new ValidateException("La fecha no puede ser nula.");
+        }
         if (infraccion.getPlaca().length() > 7) {
             throw new ValidateException("La placa debe tener como maximo 7 caracteres.");
             

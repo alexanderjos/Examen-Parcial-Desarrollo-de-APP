@@ -5,6 +5,10 @@ import com.Valverde.examen01.exception.ValidateException;
 
 public class InfraccionValidator {
     public static void save(Infraccion infraccion) {
+        if (infraccion.getDni() == null || infraccion.getDni().isEmpty()) {
+            throw new ValidateException("El DNI no puede ser nulo o vacío.");
+            
+        }
        
         if (infraccion.getDescripcion() == null || infraccion.getDescripcion().isEmpty()) {
             throw new ValidateException("La descripción no puede ser nula o vacía.");

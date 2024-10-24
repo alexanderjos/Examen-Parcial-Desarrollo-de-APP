@@ -106,8 +106,15 @@ function getFila(id) {
             if (data.ok) {
                 $("#modal-title").text("Editar infracción");
                 $("#dni").val(data.body.dni);
-                const formattedDate = new Date(data.body.fecha).toISOString().split('T')[0];
+                const fechaOriginal = data.body.fecha; // Obtén la fecha del JSON
+                const fecha = new Date(fechaOriginal);    // Convierte a un objeto Date
+
+                // Formatea la fecha para el input datetime-local (YYYY-MM-DDTHH:MM)
+                const formattedDate = fecha.toISOString().slice(0, 16);
+
+                // Asigna la fecha formateada al input
                 $("#fecha").val(formattedDate);
+
                 $("#placa").val(data.body.placa);
                 $("#infraccion").val(data.body.infracción);
                 $("#descripcion").val(data.body.descripcion);

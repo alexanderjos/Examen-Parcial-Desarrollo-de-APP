@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.entity;
+package com.Valverde.examen01.entity;
 
 import java.util.Date;
 
@@ -8,7 +8,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 @Setter
 @Getter
 @AllArgsConstructor
@@ -26,7 +25,7 @@ public class Infraccion{
     private String dni;
 
     @Column(name="fecha")
-    private DateTime fecha;
+    private Date fecha;
 
     @Column(length = 7, nullable = false)
     private String placa;

@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.config;
+package com.Valverde.examen01.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.valverde.facturacion.almacen.exception.GeneralException;
-import com.valverde.facturacion.almacen.exception.NoDataFoundException;
-import com.valverde.facturacion.almacen.exception.ValidateException;
-import com.valverde.facturacion.almacen.util.WrapperResponse;
+import com.Valverde.examen01.exception.GeneralException;
+import com.Valverde.examen01.exception.NoDataFoundException;
+import com.Valverde.examen01.exception.ValidateException;
+import com.Valverde.examen01.util.WrapperResponse;
 
 @ControllerAdvice
 public class ErrorHandlerConfig extends ResponseEntityExceptionHandler {

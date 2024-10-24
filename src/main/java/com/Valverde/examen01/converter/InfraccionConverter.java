@@ -1,33 +1,38 @@
-package com.valverde.facturacion.almacen.converter;
+package com.Valverde.examen01.converter;
 import org.springframework.stereotype.Component;
+
+import com.Valverde.examen01.dto.InfraccionDto;
+import com.Valverde.examen01.entity.Infraccion;
 
 
 
 @Component
-public class InfraccionConverter extends AbstractConverter<Producto,ProductoDto> { 
+public class InfraccionConverter extends AbstractConverter<Infraccion,InfraccionDto> { 
     @Override
-    public ProductoDto fromEntity(Producto entity) {
+    public InfraccionDto fromEntity(Infraccion entity) {
         if (entity == null) return null;
 
-        return ProductoDto.builder()
+        return InfraccionDto.builder()
                 .id(entity.getId())
-                .nombre(entity.getNombre())
-                .despricion(entity.getDescripcion())
-                .stock(entity.getStock())
-                .precio(entity.getPrecio())
+                .dni(entity.getDni())
+                .placa(entity.getPlaca())
+                .descripcion(entity.getDescripcion())
+                .infracción(entity.getInfracción())
+                .fecha(entity.getFecha())
                 .build();
     }
 
     @Override
-    public Producto fromDTO(ProductoDto dto) {
+    public Infraccion fromDTO(InfraccionDto dto) {
         if (dto == null) return null;
 
-        return Producto.builder()
+        return Infraccion.builder()
                 .id(dto.getId())
-                .nombre(dto.getNombre())
-                .descripcion(dto.getDespricion())
-                .stock(dto.getStock())
-                .precio(dto.getPrecio())
+                .dni(dto.getDni())
+                .placa(dto.getPlaca())
+                .descripcion(dto.getDescripcion())
+                .infracción(dto.getInfracción())
+                .fecha(dto.getFecha())
                 .build();
     }
 

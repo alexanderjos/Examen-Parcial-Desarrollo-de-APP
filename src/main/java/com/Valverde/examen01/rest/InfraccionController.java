@@ -34,9 +34,6 @@ public class InfraccionController{
         return new WrapperResponse(true, "success", infraccion).createResponse(HttpStatus.OK);
     }
 
-
-
-    
     @PostMapping
     public ResponseEntity<InfraccionDto> create (@RequestBody InfraccionDto infraccion) {
         Infraccion entity = converter.fromDTO(infraccion);
